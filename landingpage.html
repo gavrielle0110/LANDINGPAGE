@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website</title>
+    <link rel="stylesheet" href="landingpage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- header -->
+    <header>
+        <h1 class="name">Space</h1>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="projek.html" target="_blank">HOME</a>
+                <a href="projek.html" target="_blank" id="about">ABOUT</a>
+                <a href="https://wa.me/085220601860">CONTACT</a>
+            </div>
+        </div>
+    </header>
+    <!-- endheader -->
+    <!-- section baru -->
+    <section class="home">
+        <video class="video-slide active" src="gambar/nebula_-_24623 (Original).mp4" autoplay muted loop></video>
+        <video class="video-slide" src="gambar/140733 (Original).mp4" autoplay muted loop></video>
+        <div class="content active">
+            <h1>Journey Of,<br><span>SPACE</span></h1>
+            <p>Space is full of mysteries waiting to be solved. In fact, only 0.0001% of outer space has been explored and will continue to shrink. But that doesn't rule out the fact that space is both beautiful and scary.</p>
+        </div>
+        <div class="content">
+            <h1>The Great,<br><span>BLACK HOLE</span></h1>
+            <p>Black holes are mysterious objects with incredibly strong gravitational forces, preventing anything, including light, from escaping. They form when massive stars collapse under their own gravity. The event horizon marks the boundary where escape becomes impossible. While observing black holes directly is difficult, scientists infer their presence through gravitational effects on nearby matter and light.</p>
+        </div>
+
+        <div class="slider-navigation">
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+    <!-- end section -->
+
+
+
+
+    <!-- javascript -->
+    <script type="text/javascript">
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+
+        var sliderNav = function(manual){
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            contents.forEach((content) => {
+                content.classList.remove("active");
+            })
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+        btns.forEach((btn,i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            })
+        });
+
+
+    </script>
+    <!-- end javascript -->
+</body>
+</html>
